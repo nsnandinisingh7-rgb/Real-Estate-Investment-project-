@@ -1,0 +1,79 @@
+======================================================================
+1. RAW DATA OVERVIEW
+======================================================================
+Shape: 250,000 rows x 23 columns
+
+Missing values per column (raw):
+  none
+
+Duplicate rows (all columns): 0
+Duplicate IDs: 0
+
+======================================================================
+2. DUPLICATES & TEXT CLEANING
+======================================================================
+Rows removed as duplicates: 0  ->  250,000 rows remain
+
+======================================================================
+3. MISSING VALUE TREATMENT
+======================================================================
+Dropped 0 rows missing Price_in_Lakhs or Size_in_SqFt
+
+======================================================================
+4. CONSISTENCY CHECKS
+======================================================================
+Rows with size <= 0 or price <= 0 removed: 0
+Age_of_Property recomputed from Year_Built (rows that differed: 0)
+Price_per_SqFt given in: Lakhs per sqft (auto-detected)
+  Rows differing >5% from Price/Size: 65,469
+  Price_per_SqFt_Calc (Rs per sqft) is recomputed and used everywhere below.
+Rows where Floor_No > Total_Floors: 116,304 (Total_Floors set to Floor_No)
+
+======================================================================
+5. OUTLIER DETECTION (IQR rule: Q1 - 1.5*IQR, Q3 + 1.5*IQR)
+======================================================================
+  Size_in_SqFt           outliers:      0 (0.00%)   bounds [0.0, 7,250.5]
+  Price_in_Lakhs         outliers:      0 (0.00%)   bounds [0.0, 743.4]
+  Price_per_SqFt_Calc    outliers: 19,723 (7.89%)   bounds [0.0, 32,764.2]
+  Outliers are FLAGGED (…_Outlier) and CAPPED (…_Capped), not deleted.
+  Use the *_Capped columns for model training, raw columns for EDA.
+
+======================================================================
+6. FEATURE ENGINEERING
+======================================================================
+  Created: Transport_Score, Furnished_Level, Parking_Count, Has_Security, Amenity_Count, Amn_* flags,
+           Floor_Ratio, Rooms_per_1000SqFt, Avg_Room_Size, School_Density_Score,
+           Infrastructure_Score, City_Median_PPSF, PPSF_vs_City_Median, Age_Bucket
+
+======================================================================
+7. TARGET VARIABLES (derived using stated assumptions)
+======================================================================
+The dataset has NO appreciation rate and NO future price, so both targets are
+created from domain rules. Document these assumptions in your report.
+
+Future_Price_5Y_Lakhs = Price * (1 + g)^5,  g = 5% + up to 4% (infrastructure) - up to 1% (age)
+Good_Investment = 1 if >= 3 of 4 rules pass: price <= city median per sqft, infra >= median, growth >= median, age <= 20 yrs
+Class balance: Good = 39.2%, Not good = 60.8%
+
+!! LEAKAGE WARNING !!
+Good_Investment is built from PPSF_vs_City_Median, Infrastructure_Score,
+Annual_Growth_Rate and Age_of_Property. If you feed those into the classifier,
+accuracy will be ~100% and meaningless. They are excluded from CLASSIFICATION
+features in the model-ready file. Likewise Annual_Growth_Rate/Appreciation_Pct_5Y
+are excluded from REGRESSION features.
+
+======================================================================
+8. ENCODING & SCALING
+======================================================================
+  Scaled 22 numeric columns with StandardScaler (mean 0, std 1)
+  One-hot encoded: ['State', 'Property_Type', 'Facing', 'Owner_Type', 'Availability_Status', 'City'] -> 68 columns
+  Frequency encoded: Locality, City
+  Amenity flags kept as 0/1: 5 columns
+  Model-ready shape: (250000, 100)
+
+======================================================================
+DONE
+======================================================================
+Saved: outputs/cleaned_real_estate.csv  (250000, 54)
+Saved: outputs/model_ready_real_estate.csv  (250000, 100)
+Saved: outputs/preprocessor.joblib

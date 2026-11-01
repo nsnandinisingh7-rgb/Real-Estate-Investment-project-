@@ -1,0 +1,31 @@
+{
+  "best_classifier": "XGBoost",
+  "best_regressor": "RandomForest",
+  "classifier_metrics": {
+    "accuracy": 0.8229,
+    "precision": 0.7482,
+    "recall": 0.8267,
+    "f1": 0.7855,
+    "roc_auc": 0.9249,
+    "train_accuracy": 0.8547,
+    "train_seconds": 9.9933
+  },
+  "regressor_metrics": {
+    "rmse": 1.2824,
+    "mae": 0.8356,
+    "r2": 1.0,
+    "train_seconds": 92.7071,
+    "mape_pct": 0.3045,
+    "train_r2": 1.0
+  },
+  "naive_baseline": {
+    "rmse": 32.002943545665374,
+    "mae": 24.42710760656923,
+    "r2": 0.9729368707691664
+  },
+  "cv_f1_mean": 0.7735406906023238,
+  "cv_f1_std": 0.003992833589694405,
+  "n_train": 200000,
+  "n_test": 50000,
+  "good_investment_share": 0.39234
+}

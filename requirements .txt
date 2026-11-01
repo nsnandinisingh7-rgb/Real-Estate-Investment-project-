@@ -1,0 +1,12 @@
+pandas>=2.2
+numpy
+matplotlib
+seaborn
+joblib
+tabulate
+mlflow>=3.0
+streamlit>=1.40
+altair
+# The saved models are pickle files: use the same versions they were trained with
+scikit-learn==1.9.1
+xgboost==3.4.1
