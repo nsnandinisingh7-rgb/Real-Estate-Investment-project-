@@ -1,0 +1,43 @@
+State,City,listings,avg_price_lakhs,avg_ppsf,pct_good,avg_infra
+Andhra Pradesh,Vijayawada,6344,254.64,13159.66,39.14,49.93
+Andhra Pradesh,Vishakhapatnam,6118,255.77,13245.04,39.93,50.52
+Assam,Guwahati,6092,252.99,13004.5,39.63,49.96
+Assam,Silchar,6404,252.58,13159.67,38.91,49.97
+Bihar,Gaya,6170,257.05,13146.4,39.32,49.88
+Bihar,Patna,6199,252.79,12955.29,38.33,49.67
+Chhattisgarh,Bilaspur,6263,251.88,12931.07,39.63,50.19
+Chhattisgarh,Raipur,6193,253.48,13124.28,39.08,49.98
+Delhi,Dwarka,6246,253.45,12906.04,39.26,50.1
+Delhi,New Delhi,6306,251.61,12976.33,39.31,50.32
+Gujarat,Ahmedabad,6411,253.59,12815.83,38.71,49.9
+Gujarat,Surat,6167,258.08,13377.35,39.42,49.38
+Haryana,Faridabad,6169,254.86,13010.31,38.77,49.95
+Haryana,Gurgaon,6145,254.03,13127.4,39.54,50.2
+Jharkhand,Jamshedpur,6335,252.63,12834.99,39.13,49.89
+Jharkhand,Ranchi,6145,254.62,13120.28,39.02,50.01
+Karnataka,Bangalore,4144,258.46,13139.52,39.62,49.87
+Karnataka,Mangalore,4063,256.92,13375.35,37.73,49.57
+Karnataka,Mysore,4217,256.85,13244.29,37.78,49.81
+Kerala,Kochi,6305,257.42,13202.71,39.6,50.32
+Kerala,Trivandrum,6182,251.26,12757.34,38.56,49.62
+Madhya Pradesh,Bhopal,6284,256.5,12959.14,41.26,50.54
+Madhya Pradesh,Indore,6167,255.41,13181.0,39.1,49.74
+Maharashtra,Mumbai,4149,252.06,13166.67,40.06,50.39
+Maharashtra,Nagpur,4160,255.53,12745.74,38.65,49.97
+Maharashtra,Pune,4224,256.5,13294.78,38.71,50.02
+Odisha,Bhubaneswar,6323,254.9,13133.74,39.27,49.97
+Odisha,Cuttack,6358,250.79,12932.65,39.64,49.99
+Punjab,Amritsar,6221,252.43,12934.78,38.77,50.39
+Punjab,Ludhiana,6295,253.16,12928.23,39.81,50.11
+Rajasthan,Jaipur,6231,255.25,12928.71,39.64,50.3
+Rajasthan,Jodhpur,6171,253.95,12935.67,40.07,50.17
+Tamil Nadu,Chennai,6168,256.83,13158.76,38.34,49.7
+Tamil Nadu,Coimbatore,6461,256.5,13107.27,39.03,49.86
+Telangana,Hyderabad,6273,256.59,13228.64,40.0,50.27
+Telangana,Warangal,6266,254.48,12957.41,39.98,50.11
+Uttar Pradesh,Lucknow,6237,256.21,13143.56,38.45,49.67
+Uttar Pradesh,Noida,6271,256.29,13141.49,39.44,50.2
+Uttarakhand,Dehradun,6234,256.89,13006.16,39.04,50.2
+Uttarakhand,Haridwar,6267,252.48,13047.91,39.43,50.14
+West Bengal,Durgapur,6387,254.1,13185.68,39.28,49.92
+West Bengal,Kolkata,6235,253.91,12932.37,38.46,49.87
